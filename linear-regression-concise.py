@@ -14,8 +14,6 @@ true_w = torch.tensor([2, -3.4])
 true_b = 4.2
 features, labels = d2l.synthetic_data(true_w, true_b, 1000)
 
-# print(features)
-# print(labels)
 
 batch_size = 10
 data_iter = load_array((features, labels), batch_size)
@@ -25,7 +23,11 @@ data_iter = load_array((features, labels), batch_size)
 net = nn.Sequential(nn.Linear(2, 1))
 # 初始化模型参数
 net[0].weight.data.normal_(0, 0.01)
+
 net[0].bias.data.fill_(0)
+
+print(net[0].weight)
+print(net[0].bias)
 # 计算均方误差使用的是MSELoss类，也称为平方范数。 默认情况下，它返回所有样本损失的平均值
 loss = nn.MSELoss()
 # SGD:随机梯度下降优化器类,小批量随机梯度下降只需要设置lr值，这里设置为0.03,
