@@ -2,7 +2,7 @@ import numpy as np
 from pandas import read_csv
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
-from LSTM.parser_my import args
+from parser_my import args
 
 
 def getData(corpusFile, sequence_length, batchSize):

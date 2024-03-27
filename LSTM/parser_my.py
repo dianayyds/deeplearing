@@ -3,7 +3,7 @@ import torch
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--corpusFile', default=r"../DataProcessing/data/13.csv")
+parser.add_argument('--corpusFile', default='./data/13.csv')
 parser.add_argument('--gpu', default=0, type=int)
 parser.add_argument('--epochs', default=200, type=int)
 parser.add_argument('--layers', default=2, type=int)
